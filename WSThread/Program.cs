@@ -13,11 +13,12 @@ namespace WSThread
     {
         static void Main(string[] args)
         {
-            DelegateSquareUp squaUp = new DelegateSquareUp(x => x * x);
-            int res = squaUp.Invoke(4);
+            //DelegateSquareUp squaUp = new DelegateSquareUp(x => x * x);
+            //int res = squaUp.Invoke(4);
+            int res = SquareUp.Invoke(7);
             Console.WriteLine("Result is : {0}", res);
             Console.Read();
         }
-        //static Func<int, int> SquareUp = x => x * x;
+        static Func<int, int> SquareUp = x => x * x;
     }
 }
