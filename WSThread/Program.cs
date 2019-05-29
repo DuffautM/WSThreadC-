@@ -13,23 +13,19 @@ namespace WSThread
     {
         static void Main(string[] args)
         {
-            
-            DELG delg = CLpara.Methode_para;
-            var param = new Thread(new ThreadStart(CLpara.Methode_para));
-            Thread t = new Thread(delg.Invoke);
-            t.Start();
-        }
-    }
-
-    static class CLpara
-    {
-        public static void Methode_para()
-        {
-            for(int i = 0; i<10; i++)
-            {
-                Console.WriteLine("Message : {0}", i);
-                Thread.Sleep(1000);
-            }
+            System.Threading.Thread t =
+                new Thread(
+                    new ThreadStart(() =>
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Console.WriteLine("Message : {0}", i);
+                            Thread.Sleep(1000);
+                        }
+                    }
+                    )
+                );
+                t.Start();
         }
     }
 }
