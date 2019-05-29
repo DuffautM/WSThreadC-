@@ -6,26 +6,31 @@ using System.Threading;
 
 namespace WSThread
 {
-
-    delegate void DELG();
-
     class Program
     {
+        private delegate void DELG(object state);
+        private static int var = 0;
+        private static object _Lock = new object ();
+
         static void Main(string[] args)
         {
-            System.Threading.Thread t =
-                new Thread(
-                    new ThreadStart(() =>
-                    {
-                        for (int i = 0; i < 10; i++)
-                        {
-                            Console.WriteLine("Message : {0}", i);
-                            Thread.Sleep(1000);
-                        }
-                    }
-                    )
-                );
-                t.Start();
+            DELG d = (state) =>
+            {
+                lock (_Lock)
+                {
+                    string name_thread = (string)state;
+                    ++var;
+                    Console.WriteLine("Thread -> {0} -- var -> {1}", name_thread, var.ToString());
+                    System.Threading.Thread.Sleep(2000);
+                }
+            };
+
+            Thread t1 = new Thread(d.Invoke);
+            Thread t2 = new Thread(d.Invoke);
+            t1.Start(((object)("T1")));
+            t2.Start(((object)("T2")));
+            Console.Read();
+
         }
     }
 }
