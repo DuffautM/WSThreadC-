@@ -13,17 +13,17 @@ namespace WSThread
     {
         static void Main(string[] args)
         {
-            CLpara myClass = new CLpara();
-            DELG delg = myClass.Methode_para;
-            var param = new Thread(new ThreadStart(myClass.Methode_para));
+            
+            DELG delg = CLpara.Methode_para;
+            var param = new Thread(new ThreadStart(CLpara.Methode_para));
             Thread t = new Thread(delg.Invoke);
             t.Start();
         }
     }
 
-    class CLpara
+    static class CLpara
     {
-        public void Methode_para()
+        public static void Methode_para()
         {
             for(int i = 0; i<10; i++)
             {
