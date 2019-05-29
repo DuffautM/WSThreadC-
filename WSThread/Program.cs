@@ -11,18 +11,23 @@ namespace WSThread
         private delegate void DELG(object state);
         private static int var = 0;
         private static object _Lock = new object ();
+        static Mutex mutex;
 
         static void Main(string[] args)
         {
+            mutex = new Mutex(false);
             DELG d = (state) =>
             {
-                lock (_Lock)
+                string name_thread = (string)state;
+                mutex.WaitOne();
+                for(int i = 0; i<3; i++)
                 {
-                    string name_thread = (string)state;
                     ++var;
                     Console.WriteLine("Thread -> {0} -- var -> {1}", name_thread, var.ToString());
                     System.Threading.Thread.Sleep(2000);
                 }
+                mutex.ReleaseMutex();
+
             };
 
             Thread t1 = new Thread(d.Invoke);
