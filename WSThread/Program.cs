@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace WSThread
 {
+
+    delegate void DELG();
 
     class Program
     {
         static void Main(string[] args)
         {
-            var myVar = new MyClass();
-            myVar.foo = 4;
-            myVar.bar = "test";
-
-            var anonymousVar = new { i = 0, s = "test" };
+            CLpara myClass = new CLpara();
+            DELG delg = myClass.Methode_para;
+            var param = new Thread(new ThreadStart(myClass.Methode_para));
+            Thread t = new Thread(delg.Invoke);
+            t.Start();
         }
     }
 
-    //Creating a class is only useful when it is needed more than once, 
-    //in the case of only used once, an anonymous type is useful when it is readonly
-    public class MyClass
+    class CLpara
     {
-        public int foo;
-        public string bar;
+        public void Methode_para()
+        {
+            for(int i = 0; i<10; i++)
+            {
+                Console.WriteLine("Message : {0}", i);
+                Thread.Sleep(1000);
+            }
+        }
     }
 }

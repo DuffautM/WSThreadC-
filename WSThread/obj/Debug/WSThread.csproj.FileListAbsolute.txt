@@ -12,3 +12,5 @@ C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.csprojAssembl
 C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.csproj.CoreCompileInputs.cache
 C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.exe
 C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.pdb
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.csproj.CopyComplete
