@@ -7,18 +7,23 @@ using System.Threading.Tasks;
 namespace WSThread
 {
 
-    delegate int DelegateSquareUp(int x);
-
     class Program
     {
         static void Main(string[] args)
         {
-            //DelegateSquareUp squaUp = new DelegateSquareUp(x => x * x);
-            //int res = squaUp.Invoke(4);
-            int res = SquareUp.Invoke(7);
-            Console.WriteLine("Result is : {0}", res);
-            Console.Read();
+            var myVar = new MyClass();
+            myVar.foo = 4;
+            myVar.bar = "test";
+
+            var anonymousVar = new { i = 0, s = "test" };
         }
-        static Func<int, int> SquareUp = x => x * x;
+    }
+
+    //Creating a class is only useful when it is needed more than once, 
+    //in the case of only used once, an anonymous type is useful when it is readonly
+    public class MyClass
+    {
+        public int foo;
+        public string bar;
     }
 }
