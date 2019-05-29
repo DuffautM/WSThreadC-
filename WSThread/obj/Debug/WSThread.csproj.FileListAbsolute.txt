@@ -5,3 +5,10 @@ C:\Users\maxim\source\repos\WSThread\WSThread\obj\Debug\WSThread.csprojAssemblyR
 C:\Users\maxim\source\repos\WSThread\WSThread\obj\Debug\WSThread.csproj.CoreCompileInputs.cache
 C:\Users\maxim\source\repos\WSThread\WSThread\obj\Debug\WSThread.exe
 C:\Users\maxim\source\repos\WSThread\WSThread\obj\Debug\WSThread.pdb
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\bin\Debug\WSThread.exe.config
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\bin\Debug\WSThread.exe
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\bin\Debug\WSThread.pdb
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.csprojAssemblyReference.cache
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.csproj.CoreCompileInputs.cache
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.exe
+C:\Users\maxim\source\repos\WSThreadC#\WSThread\obj\Debug\WSThread.pdb
